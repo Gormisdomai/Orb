@@ -219,8 +219,8 @@ void loop(){
 	delay(500);
 	
 	digitalWrite(indicatorPin, LOW);
-	while(client.available()){
-    		String line = client.readStringUntil('\r');
+	if(client.available()){
+    		String line = client.readString();
     		readData(line);
   	}
 
